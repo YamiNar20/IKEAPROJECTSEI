@@ -6,7 +6,8 @@ module.exports = {
   addToCart,
   setItemQtyInCart,
   checkout,
-  history
+  history,
+  favorites
 };
 
 function jsonOrder(_, res) {
@@ -70,6 +71,20 @@ async function history(req, res, next) {
       .find({ user: req.user._id, isPaid: true })
       .sort('-updatedAt').exec();
     res.status(200).json(orders);
+  }catch(e){
+    res.status(400).json({ msg: e.message });
+  }
+
+}
+
+// Return the logged in user's paid order history
+async function favorites(req, res, next) {
+  // Sort most recent favorites
+  try{
+    const likedItems = await Item
+      .find({ isliked: true })
+      .sort('-updatedAt').exec();
+    res.status(200).json(likedItems);
   }catch(e){
     res.status(400).json({ msg: e.message });
   }

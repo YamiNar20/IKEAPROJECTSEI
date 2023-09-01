@@ -1,45 +1,27 @@
-## Steps
+IKEA Mernstack -APP
 
-**Install Gulp Globally**
-```bash
-npm i -g gulp-cli
-```
+Description
 
-**Start the dev server**
-```bash
-npm run dev
-```
-### or
-```bash
-yarn dev
-```
+Welcome to our project! This is an IKEA MERN stack app built in JavaScript and the React framework. It enables users to efficiently add, delete, and checkout items in an order. With this app, users can effortlessly explore IKEA's offerings without the need to create an account or become a member to access specific discounts. We hope you enjoy using it and we eagerly anticipate your contributions!
 
-**Start the dev server with proxy**
-```bash
-npm run proxy
-```
+Contributing
 
-**Build files for production**
-```bash
-yarn build
-```
-### or
+We welcome any and all contributions! Here are some ways you can get started:
 
-```bash
-npm run build
-```
+Bug Reports: Encountered a bug? Kindly inform us by opening an issue, detailing the problem you've encountered.
 
-**Deploy for production script**
-```bash
-npm start
-```
-### or
-```bash
-yarn start
-```
+Code Contributions: If you're a developer keen on contributing code, follow the instructions below to initiate your involvement.
 
-I've updated the DEV branch in my Github with MONGODB Connection functionality. Once you pull the updated changes you should be able to Connect to your DB after doing the following:
-Run NPM I
-Run NPM I morgan
-Update Your .ENV file with your own connection string (Remember to change the name of your collection in the Connection String)
-run NPM RUN START
+Ideas and Suggestions: Not inclined to code but have fantastic ideas? Share your thoughts by opening an issue and describing the enhancements or improvements you envision.
+
+Documentation: Recognize the need for more documentation? Feel free to supplement our existing resources with your insights!
+
+We value your input in any of these aspects and eagerly await your involvement!
+
+ Instructions
+
+Fork this repository
+Clone the forked repository
+Add your contributions (code or documentation)
+Commit and push
+Wait for pull request to be merged

@@ -8,4 +8,5 @@ router.get('/history', ensureLoggedIn, ordersCtrl.history)
 router.post('/cart/items/:id', ordersCtrl.addToCart)
 router.post('/cart/checkout', ensureLoggedIn, ordersCtrl.checkout)
 router.put('/cart/qty', ordersCtrl.setItemQtyInCart)
+router.get('/favorites', ensureLoggedIn, ordersCtrl.favorites)
 module.exports = router

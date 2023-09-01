@@ -9,7 +9,8 @@ const itemSchema = new Schema ({
     emojiURL: String,
     category: {type: Schema.Types.ObjectId, ref: 'Category'},
     price: {type: Number, required: true, default: 0.00},
-    rating: {type: Number, default: 0}
+    rating: {type: Number, default: 0},
+    isliked: {type: Boolean, default: false}
 }, {
     timestamps: true
 })

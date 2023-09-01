@@ -30,3 +30,7 @@ import sendRequest from './send-request';
     export function getOrderHistory() {
     return sendRequest(`${BASE_URL}/history`);
     }
+    //Add FavoritesList
+    export function getFavorites() {
+      return sendRequest(`${BASE_URL}/favorites`);
+      }
