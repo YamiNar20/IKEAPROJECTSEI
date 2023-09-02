@@ -1,10 +1,8 @@
-const Item = require('../../models/item').Item;
+const Item = require('../../models/item')
 
 module.exports = {
 	index,
-	show,
-	update,
-	destroy
+	show
 };
 
 function jsonItem(_, res) {
@@ -15,16 +13,7 @@ function jsonItems(_, res) {
 	res.json(res.locals.data.todos)
 }
 
-/****** C - Create ********/
-async function create(req, res, next){
-    try {
-        const item = await Item.create(req.body)
-        res.locals.data.item = item
-        next()
-    } catch (error) {
-        res.status(400).json({ msg: error.message })
-    }
-}
+
 
 /****** R - Read ********/
 async function index(req, res, next) {
@@ -47,24 +36,3 @@ async function show(req, res) {
 	}
 }
 
-/****** U - Update ********/
-async function update(req, res, next){
-    try {
-        const item = await Item.findByIdAndUpdate(req.params.id, req.body, {new: true})
-        res.locals.data.item = item
-        next()
-    } catch (error) {
-        res.status(400).json({ msg: error.message })
-    }
-}
-
-/****** D - Destroy/Delete ********/
-async function destroy(req, res, next){
-    try {
-        const item = await Item.findByIdAndDelete(req.params.id)
-        res.locals.data.item = item
-        next()
-    } catch (error) {
-        res.status(400).json({ msg: error.message })
-    }
-}

@@ -7,3 +7,4 @@ const db = mongoose.connection
 db.on('connected', () => {
     console.log(`MONGO: ${db.name} ON AT ${db.host}`)
 })
+
