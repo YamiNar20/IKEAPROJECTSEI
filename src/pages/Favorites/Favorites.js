@@ -1,4 +1,5 @@
-//==== NEEDED COMPONENTS FOR FAVORITES SCREEN ====//
+//
+
     /*
     Logo
     USER PORTAL COMPONENT
