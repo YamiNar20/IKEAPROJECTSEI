@@ -36,7 +36,7 @@ export default function Shop({ user, setUser, cart, setCart }) {
 	  }
 
 	return (
-		<main>
+		<main >
 			<div>
 				<CategoryList
 					categories={categoriesRef.current}

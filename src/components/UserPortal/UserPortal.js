@@ -21,20 +21,32 @@ export default function UserPortal({ user, setUser, cart }) {
     // },[user])
     
     return (
-        <div className={styles.portalcontainer}>
+        <main className={styles.LoginSignupBtn}>
             {user && user.isLoggedIn ? (
-                <div className={styles.loggedin}>
-                    <Link  to='/account' className='userlink'>Hey, {user.username}</Link>
-                    <Link to='/favorites' className='favbtn'>likes</Link>
-                    <Link to='/cart' className={styles.cartbtn}>{cart ? `cart(${cart.totalQty})` : 'cart(0)'}</Link>
+                <div>
+                    <Link to="/account" className={styles.AccountLink}>
+                        Hey, {user.username}
+                    </Link>
+                    <Link to="/favorites" className={styles.FavoritesLink}>
+                        likes
+                    </Link>
+                    <Link to="/cart" className={styles.CartLink}>
+                        {cart ? `cart(${cart.totalQty})` : 'cart(0)'}
+                    </Link>
+                    <button element={<Navigate to="/ikea" />} onClick={handleLogOut}>
+                        Log Out
+                    </button>
                 </div>
-                
             ) : (
-                <div className={styles.notloggedin}>
-                <Link to='/guestSignUp' className='loginbtn'>Login/Signup</Link>
-                <Link to='/cart' className={styles.cartbtn}>{cart ? `cart(${cart.totalQty})` : 'cart(0)'}</Link>
+                <div className={styles.GuestServicesBtns}>
+                    <Link to="/guestSignUp" className={styles.LSBtn}>
+                        Login/Signup
+                    </Link>
+                    <Link to="/cart" className={styles.CartBtn}>
+                        {cart ? `Cart(${cart.totalQty})` : 'Cart(0)'}
+                    </Link>
                 </div>
             )}
-        </div>
-    )
+        </main>
+    );
 }

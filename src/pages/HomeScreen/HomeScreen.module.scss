@@ -1,18 +1,37 @@
-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    padding: 0px;
+.Homescreen {
+  display: inline-block;
+  margin: 100px 0px 0px 120px;
+  div {
+      display: block;
+      justify-content: center;
+      padding: 100px;
+  }
   
-    h1 {
+  .h1 {
       font-size: 2.5rem;
       color: #333;
-      margin-bottom: 20px;
-      margin-top: 50rem;
-      width: 100%; 
-    }
-  
-    .pexels-content {
-      flex-basis: calc(50% - 5px); 
-    }
+      
+      padding: 200px;
   }
+  
+  .pexels-content {
+      flex-basis: calc(50% - 5px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,25 +1,14 @@
-.NavBar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.5rem;
-    display: felx;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-main {
-    color: yellow;
-    margin: 0 0.5rem;
-    font-weight: 500;
-}
-
-div { 
-    color: blue;
-    margin: 0 0.5rem;
-    font-weight: 500;
-}
-
-div:hover {
-    cursor: crosshair
+.Links{
+    display: flex;
+    margin: 60px 25px 25px 25px;
+     
+    .NavBarLinks a{
+        color: #0051BA;
+        font-size: 25px;
+        font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif !important;
+        display: inline;
+        text-align: left;
+        padding: 50px;
+        
+    }
 }
