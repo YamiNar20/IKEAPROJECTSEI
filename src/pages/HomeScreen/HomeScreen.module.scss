@@ -1,42 +1,3 @@
-<<<<<<< HEAD
-.Homescreen {
-  display: inline-block;
-  margin: 100px 0px 0px 120px;
-  div {
-      display: block;
-      justify-content: center;
-      padding: 100px;
-  }
-  
-  .h1 {
-      font-size: 2.5rem;
-      color: #333;
-      
-      padding: 200px;
-  }
-  
-  .pexels-content {
-      flex-basis: calc(50% - 5px);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 .home {
   display: flex;
   flex-wrap: wrap;
@@ -59,4 +20,3 @@
     flex-basis: calc(50% - 5px);
   }
 }
->>>>>>> 7ae62d6e49cd143942a7446c2140baacc7872545
