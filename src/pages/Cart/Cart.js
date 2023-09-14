@@ -2,9 +2,8 @@ import LineItem from '../../components/LineItem/LineItem';
 import { useNavigate } from 'react-router-dom';
 import styles from './Cart.module.scss';
 
-export default function Cart({ cart, handleChangeQty, toggleShowCart }) {
+export default function Cart({ cart, handleChangeQty, user }) {
 	if (!cart) return null;
-
 	const navigate = useNavigate();
 
 	const lineItems = cart.lineItems.map((item) => (
@@ -17,40 +16,55 @@ export default function Cart({ cart, handleChangeQty, toggleShowCart }) {
 	));
 
 	function handleCheckoutClick() {
-		toggleShowCart();
 		navigate('/checkout');
 	}
 
+	function handleUserButtonClick() {
+		navigate('/guestSignUp');
+	}
+
 	return (
-		<div className={styles.CartBackground}>
-			<div className={styles.CartPanel}>
-				<div className={styles.cartHeading}>
-					<span className={styles.itemQty}>{`${cart.totalQty} item${
+		<div className={styles['cart-container']}>
+			<div>
+				<div className={styles['cart-header']}>
+					<span className={styles['item-count']}>{`${cart.totalQty} item${
 						cart.totalQty !== 1 ? 's' : ''
 					}`}</span>
-					<button className={styles.closeBtn} onClick={toggleShowCart}>
-						close
-					</button>
 				</div>
-				<div className={`${styles.lineItemContainer} scroll-y`}>
+				<div className={`${styles['line-items']} scroll-y`}>
 					{lineItems.length ? (
 						<>
 							{lineItems}
-							<section className={styles.total}>
+							<section className={styles['total-section']}>
 								<span>${cart.orderTotal.toFixed(2)}</span>
-								{!cart.isPaid && (
+								{user.username === 'guestuser' ? (
+									<>
+										<button
+											className={styles['checkout-btn']}
+											onClick={handleCheckoutClick}
+											disabled={!lineItems.length}
+										>
+											Checkout as guest
+										</button>
+										<button
+											className={styles['checkout-btn']}
+											onClick={handleUserButtonClick}
+										>
+											Log In/Sign Up
+										</button>
+									</>
+								) : (
 									<button
-										className={styles.checkoutBtn}
+										className={styles['checkout-btn']}
 										onClick={handleCheckoutClick}
-										disabled={!lineItems.length}
 									>
-										checkout
+										Proceed to Checkout
 									</button>
 								)}
 							</section>
 						</>
 					) : (
-						<div className={styles.empty}>your cart is empty.</div>
+						<div className={styles['empty-cart']}>your cart is empty.</div>
 					)}
 				</div>
 			</div>

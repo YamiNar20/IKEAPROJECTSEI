@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Links{
     display: flex;
     margin: 60px 25px 25px 25px;
@@ -12,3 +13,41 @@
         
     }
 }
+=======
+.Links {
+    display: flex;
+    align-items: center;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+li a {
+    display: inline;
+    padding: 15px;
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+
+}
+
+li a :hover {
+    color: blue;
+}
+
+ul {
+    display: block;
+    width: 50%;
+    flex: 2;
+}
+
+.logo {
+    
+}
+>>>>>>> 7ae62d6e49cd143942a7446c2140baacc7872545

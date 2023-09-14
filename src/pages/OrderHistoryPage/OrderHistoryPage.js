@@ -1,51 +1,49 @@
 import styles from './OrderHistoryPage.module.scss';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import * as ordersAPI from '../../utilities/orders-api';
-import Logo from '../../components/Logo/Logo';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import * as ordersAPI from '../../utilities/order-api';
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
 export default function OrderHistoryPage({ user, setUser }) {
-  /*--- State --- */
-  const [orders, setOrders] = useState([]);
-  const [activeOrder, setActiveOrder] = useState(null);
+	const [orders, setOrders] = useState([]);
+	const [activeOrder, setActiveOrder] = useState(null);
+	const [showOrderDetail, setShowOrderDetail] = useState(false);
 
-  /*--- Side Effects --- */
-  useEffect(function () {
-    // Load previous orders (paid)
-    async function fetchOrderHistory() {
-      const orders = await ordersAPI.getOrderHistory();
-      setOrders(orders);
-      // If no orders, activeOrder will be set to null below
-      setActiveOrder(orders[0] || null);
-    }
-    fetchOrderHistory();
-  }, []);
+	useEffect(function () {
+		async function fetchOrderHistory() {
+			const orders = await ordersAPI.getOrderHistory();
+			setOrders(orders);
+			setActiveOrder(orders[0] || null);
+		}
+		fetchOrderHistory();
+	}, []);
 
-  /*--- Event Handlers --- */
-  function handleSelectOrder(order) {
-    setActiveOrder(order);
-  }
+	function handleSelectOrder(order) {
+		if (activeOrder === order) {
+			setShowOrderDetail(false);
+			setActiveOrder(null); 
+		} else {
+			setActiveOrder(order);
+			setShowOrderDetail(true);
+		}
+	}
 
-  /*--- Rendered UI --- */
-  return (
-    <main className={styles.OrderHistoryPage}>
-      <aside className={styles.aside}>
-        <Logo />
-        <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>
-        <UserLogOut user={user} setUser={setUser} />
-      </aside>
-      <OrderList
-        orders={orders}
-        activeOrder={activeOrder}
-        handleSelectOrder={handleSelectOrder}
-      />
-      <OrderDetail
-        order={activeOrder}
-      />
-    </main>
-    
-  );
+	return (
+		<main className={styles.OrderHistoryPage}>
+			<aside>
+				<OrderList
+					orders={orders}
+					activeOrder={activeOrder}
+					handleSelectOrder={handleSelectOrder}
+				/>
+			</aside>
+			<div
+				className={`${styles.OrderDetail} ${
+					showOrderDetail ? styles.show : ''
+				}`}
+			>
+				<OrderDetail order={activeOrder} />
+			</div>
+		</main>
+	);
 }

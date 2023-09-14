@@ -1,0 +1,28 @@
+.Team {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #007bff;
+    border: black;
+    border-radius: 10px;
+    font-size: 25px;
+    justify-content: center;
+
+
+    .mission {
+        color: #FFDA1A;
+        margin: 15px;
+    }
+
+    .statement1 {
+        padding: 15px 15px 15px 15px;
+    }
+
+    .names {
+        justify-content: center;
+    }
+
+    .nameColor {
+        color: #FFDA1A;
+    }
+}

@@ -135,71 +135,71 @@ export default function Footer() {
 				</div>
 				<div className={styles.payLinks}>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/visa.svg"
 						alt="Visa"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/master-card.svg"
 						alt="Mastercard"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/discover.svg"
 						alt="Discover"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/american-express.svg"
 						alt="Amex"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/ikea-credit-card.svg"
 						alt="IKEA credit card"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/paypal.svg"
 						alt="Paypal"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/apple-pay.svg"
 						alt="Apple Pay"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/union-pay.svg"
 						alt="Union Pay"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/jcb.svg"
 						alt="JCB"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/diners-club.svg"
 						alt="Diners"
 					></img>
 					<img
-						class="hnf-payment-logo__img"
+						className="hnf-payment-logo__img"
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/ikea-gift-card.svg"
 						alt="IKEA gift card"
 					></img>
 				</div>
 				<div className={styles.socials}>
-					<a href="https://facebook.com/IKEAUSA" class="fa fa-facebook"></a>
+					<a href="https://facebook.com/IKEAUSA" className="fa fa-facebook"></a>
 
-					<a href="https://instagram.com/IKEAUSA" class="fa fa-instagram"></a>
+					<a href="https://instagram.com/IKEAUSA" className="fa fa-instagram"></a>
 
-					<a href="https://pinterest.com/IKEAUSA" class="fa fa-pinterest"></a>
+					<a href="https://pinterest.com/IKEAUSA" className="fa fa-pinterest"></a>
 
-					<a href="https://twitter.com/IKEAUSA" class="fa fa-twitter"></a>
+					<a href="https://twitter.com/IKEAUSA" className="fa fa-twitter"></a>
 
-					<a href="https://youtube.com/user/IKEAUSA" class="fa fa-youtube"></a>
+					<a href="https://youtube.com/user/IKEAUSA" className="fa fa-youtube"></a>
 				</div>
 			</section>
 		</main>

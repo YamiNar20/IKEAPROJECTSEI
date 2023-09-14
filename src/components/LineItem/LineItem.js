@@ -1,29 +1,48 @@
 import styles from './LineItem.module.scss';
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
+  const currentURL = window.location.pathname;
+
+  const shouldShowButtons = currentURL !== '/checkout';
+
   return (
     <div className={styles.LineItem}>
-      <div className="flex-ctr-ctr">
-        <img src={lineItem.item.emojiURL} alt={lineItem.item.name} className={styles.itemImage} />
+      <div>
+        <img
+          src={lineItem.item.emojiURL}
+          alt={lineItem.item.name}
+          width="200"
+          height="200"
+        />
       </div>
-      <div className="flex-ctr-ctr flex-col">
-        <span className="align-ctr">{lineItem.item.name}</span>
-        <span>{lineItem.item.price.toFixed(2)}</span>
+      <div>
+        <span className={styles.itemName}>{lineItem.item.name}</span>
+        <span className={styles.itemPrice}>
+          {lineItem.item.price.toFixed(2)}
+        </span>
       </div>
-      <div className={styles.qty} style={{ justifyContent: isPaid && 'center' }}>
-        {!isPaid && (
+      <div
+        className={styles.qty}
+        style={{ justifyContent: isPaid && 'center' }}
+      >
+        {!isPaid && shouldShowButtons && (
           <button
-            className="btn-xs"
-            onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity - 1)}
+            className={styles.btnXS}
+            onClick={() =>
+              handleChangeQty(lineItem.item._id, lineItem.quantity - 1)
+            }
           >
             −
           </button>
         )}
-        <span>{lineItem.quantity}</span>
-        {!isPaid && (
+        <span className={styles.quantityLabel}>Quantity: </span>
+        <span className={styles.quantity}>{lineItem.quantity}</span>
+        {!isPaid && shouldShowButtons && (
           <button
-            className="btn-xs"
-            onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity + 1)}
+            className={styles.btnXS}
+            onClick={() =>
+              handleChangeQty(lineItem.item._id, lineItem.quantity + 1)
+            }
           >
             +
           </button>

@@ -48,5 +48,5 @@ export function getUser() {
 
 export function logOut() {
   localStorage.removeItem('token');
-  res.locals.data.user.isLoggedIn = false
+  // localStorage.user.isLoggedIn = false
 }

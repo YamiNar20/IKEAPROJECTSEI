@@ -1,0 +1,61 @@
+.checkoutContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orderDetail {
+    flex: 1;
+  }
+  
+  .orderSummary {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .total {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .totalQty {
+    font-weight: bold;
+  }
+  
+  .totalPrice {
+    font-weight: bold;
+  }
+  
+  .userAction {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .loginButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+  
+  .paymentSection {
+    margin-top: 40px;
+  }
+  
+
+  

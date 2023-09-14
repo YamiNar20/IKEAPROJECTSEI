@@ -1,28 +1,24 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
-@import "reset";
 @import "grid";
 
+<<<<<<< HEAD
 
 // :root {
 //   background-color: white;
 // }
+=======
+:root {
+  background-color: white;
+}
+>>>>>>> 7ae62d6e49cd143942a7446c2140baacc7872545
 
 //$primary-color: #007bff;
 //$secondary-color: #ff6c00;
 
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #007bff;
-  background-image: url(https://cdn.dribbble.com/users/1937292/screenshots/7130478/media/b4ec823bfc0e4066ae20b422702b7487.gif);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100rem;
-}
 
+<<<<<<< HEAD
 // .container {
 //   max-width: 1200px;
 //   margin: 0 auto;
@@ -125,3 +121,5 @@ body {
 // .loginbtn {
 //   display:flex;
 // }
+=======
+>>>>>>> 7ae62d6e49cd143942a7446c2140baacc7872545

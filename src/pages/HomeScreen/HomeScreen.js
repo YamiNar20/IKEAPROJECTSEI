@@ -10,6 +10,7 @@ export default function HomeScreen({
 }) {
 	console.log(user);
 
+<<<<<<< HEAD
 	return (
 		<main className= {styles.HomeScreen}>
 			<div className="home-screen">
@@ -20,6 +21,16 @@ export default function HomeScreen({
 			</div>
 		</main>
 	);
+=======
+  return (
+    <div className={styles.home}>
+      <h1 className={styles.style}>What's Your Style?</h1>
+      <div className="pexels-content">
+        {/* <PexelsContent pexelsData={pexelsData} setPexelsData={setPexelsData} /> */}
+      </div>
+    </div>
+  );
+>>>>>>> 7ae62d6e49cd143942a7446c2140baacc7872545
 }
 
 //==== NEEDED COMPONENTS FOR HOME SCREEN ====//
@@ -28,6 +39,8 @@ export default function HomeScreen({
     USER PORTAL COMPONENT
     FOOTER COMPONENT
     NavBar
+
+
 
     - PICTURES & VIDEOS from Pexel's API
     

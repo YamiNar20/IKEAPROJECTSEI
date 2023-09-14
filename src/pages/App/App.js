@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-	Routes,
-	Route,
-	Navigate,
-	useNavigate,
-	useLocation
-} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import styles from './App.module.scss';
 import { getUser, signUp } from '../../utilities/users-services';
 import * as ordersAPI from '../../utilities/order-api';
@@ -18,13 +12,24 @@ import Footer from '../../components/Footer/Footer';
 import UserPortal from '../../components/UserPortal/UserPortal';
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../../pages/AuthPage/AuthPage';
+import Favorites from '../../pages/Favorites/Favorites';
+import Checkout from '../../pages/Checkout/Checkout';
+import AboutUs from '../../pages/AboutUs/AboutUs';
+
+import Jobs from '../../pages/Jobs/Jobs';
+
+import OrderHistory from '../../pages/OrderHistoryPage/OrderHistoryPage';
+
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(process.env.STRIPESPUB);
 
 export default function App() {
 	const [pexelsData, setPexelsData] = useState([]);
 	const [user, setUser] = useState(getUser());
 	const [cart, setCart] = useState(null);
-	const navigate = useNavigate();
-	let location = useLocation();
+	const [favorites, setFavorites] = useState(null);
 
 	useEffect(() => {
 		if (!user) {
@@ -58,48 +63,74 @@ export default function App() {
 	}
 
 	return (
-		<main>
-			<NavBar />
-			<UserPortal user={user} setUser={setUser} cart={cart} />
-			<Routes>
-				<Route
-					path="/ikea"
-					element={
-						<HomeScreen
-							user={user}
-							setUser={setUser}
-							pexelsData={pexelsData}
-							setPexelsData={setPexelsData}
-						/>
-					}
+		<Elements stripe={stripePromise}>
+			<main className={styles.App}>
+				<NavBar />
+				<UserPortal
+					user={user}
+					setUser={setUser}
+					setCart={setCart}
+					cart={cart}
+					createGuestUser={createGuestUser}
 				/>
-				<Route path="/shop" element={<Shop cart={cart} setCart={setCart} />} />
-				<Route
-					path="/guestSignUp"
-					element={
-						<AuthPage
-							user={user}
-							setUser={setUser}
-							cart={cart}
-							setCart={setCart}
-						/>
-					}
-				/>
-				<Route
-					path="/cart"
-					element={
-						<Cart
-							handleChangeQty={handleChangeQty}
-							user={user}
-							setUser={setUser}
-							cart={cart}
-							setCart={setCart}
-						/>
-					}
-				/>
-				<Route path="/*" element={<Navigate to="/ikea" />} />
-			</Routes>
-			<Footer />
-		</main>
+				<Routes>
+					<Route
+						path="/ikea"
+						element={
+							<HomeScreen
+								user={user}
+								setUser={setUser}
+								pexelsData={pexelsData}
+								setPexelsData={setPexelsData}
+							/>
+						}
+					/>
+					<Route
+						path="/shop"
+						element={<Shop cart={cart} setCart={setCart} />}
+					/>
+					<Route
+						path="/checkout"
+						element={
+							<Checkout
+								user={user}
+								cart={cart}
+								order={cart}
+								setCart={setCart}
+							/>
+						}
+					/>
+					<Route
+						path="/guestSignUp"
+						element={
+							<AuthPage
+								user={user}
+								setUser={setUser}
+								cart={cart}
+								setCart={setCart}
+							/>
+						}
+					/>
+					<Route
+						path="/cart"
+						element={
+							<Cart
+								handleChangeQty={handleChangeQty}
+								user={user}
+								setUser={setUser}
+								cart={cart}
+								setCart={setCart}
+							/>
+						}
+					/>
+					<Route path="/AboutUs" element={<AboutUs />} />
+					<Route path="/orders" element={<OrderHistory />} />
+					<Route path="/Jobs" element={<Jobs />} />
+					<Route path="/AboutUs" element={<AboutUs />} />
+					<Route path="/*" element={<Navigate to="/ikea" />} />
+				</Routes>
+				<Footer />
+			</main>
+		</Elements>
 	);
 }
