@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+
+
 import styles from './App.module.scss';
 import { getUser, signUp } from '../../utilities/users-services';
 import * as ordersAPI from '../../utilities/order-api';
 
-import HomeScreen from '../HomeScreen/HomeScreen';
-import Shop from '../Shopping/Shopping';
-import Cart from '../Cart/Cart';
-
 import Footer from '../../components/Footer/Footer';
 import UserPortal from '../../components/UserPortal/UserPortal';
 import NavBar from '../../components/NavBar/NavBar';
+import ChatBot from '../../components/ChatBot/ChatBot'
+import Music from '../../components/Music/Music'
+
+import HomeScreen from '../HomeScreen/HomeScreen';
+import Shop from '../Shopping/Shopping';
+import Cart from '../Cart/Cart';
 import AuthPage from '../../pages/AuthPage/AuthPage';
 import Favorites from '../../pages/Favorites/Favorites';
 import Checkout from '../../pages/Checkout/Checkout';
 import AboutUs from '../../pages/AboutUs/AboutUs';
-
 import Jobs from '../../pages/Jobs/Jobs';
-
 import OrderHistory from '../../pages/OrderHistoryPage/OrderHistoryPage';
 
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-
 const stripePromise = loadStripe(process.env.STRIPESPUB);
+
+
 
 export default function App() {
 	const [pexelsData, setPexelsData] = useState([]);
@@ -129,6 +132,7 @@ export default function App() {
 					<Route path="/AboutUs" element={<AboutUs />} />
 					<Route path="/*" element={<Navigate to="/ikea" />} />
 				</Routes>
+				<ChatBot />
 				<Footer />
 			</main>
 		</Elements>

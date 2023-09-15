@@ -13,8 +13,8 @@ const getPexelsData = async () => {
 		const [videosResponse, photosResponse] = await Promise.all([
 			axios.get(pexelsApiUrlVideos, {
 				params: {
-					per_page: 8,
-					query: 'interior design'
+					per_page: 6,
+					query: 'house furniture'
 				},
 				headers: {
 					Authorization: apiKey
@@ -33,10 +33,9 @@ const getPexelsData = async () => {
 
 		const videos = videosResponse.data.videos || [];
 		const photos = photosResponse.data.photos || [];
-		const mergedData = [...videos, ...photos];
-		//console.log('SERVER', mergedData);
+		// const mergedData = [...videos, ...photos];
 
-		return mergedData;
+		return videos;
 	} catch (error) {
 		console.error('Error fetching data from Pexels:', error);
 		throw error;

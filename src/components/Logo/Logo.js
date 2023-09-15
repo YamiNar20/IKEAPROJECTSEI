@@ -20,7 +20,7 @@ export default function Logo() {
                 }
             >
                 <div>
-                 <Link className={styles.logoText} to="/"> 𝔻𝕚𝕜𝕚𝕟𝕓𝕒𝕦𝕤 </Link>
+                 <Link className={styles.logoText} to="/"> IKEA </Link>
                 </div>
             </div>
         </div>

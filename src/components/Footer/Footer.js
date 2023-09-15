@@ -130,62 +130,62 @@ export default function Footer() {
 						className={styles.photo}
 						src="https://i.imgur.com/QXCQIOW.png"
 						width="100%"
-						height="300px"
+						height="500px"
 					></img>
 				</div>
 				<div className={styles.payLinks}>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/visa.svg"
 						alt="Visa"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/master-card.svg"
 						alt="Mastercard"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/discover.svg"
 						alt="Discover"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/american-express.svg"
 						alt="Amex"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/ikea-credit-card.svg"
 						alt="IKEA credit card"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/paypal.svg"
 						alt="Paypal"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/apple-pay.svg"
 						alt="Apple Pay"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/union-pay.svg"
 						alt="Union Pay"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/jcb.svg"
 						alt="JCB"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/diners-club.svg"
 						alt="Diners"
 					></img>
 					<img
-						className="hnf-payment-logo__img"
+						className={styles["hnf-payment-logo__img"]}
 						src="https://www.ikea.com/global/assets/logos/external-payment-providers/ikea-gift-card.svg"
 						alt="IKEA gift card"
 					></img>

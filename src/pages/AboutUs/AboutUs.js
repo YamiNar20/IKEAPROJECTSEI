@@ -18,7 +18,7 @@ export default function AboutUs() {
                         <div className={styles.statement1}>
                                 <p>
                                         <h1 className={styles.mission}>Mission Statement:</h1>
-                                        Mission Statement: At 𝔻𝕚𝕜𝕚𝕟𝕓𝕒𝕦𝕤 , our mission is to transform houses into homes by providing high-quality, stylish, and functional furniture that enriches the lives of our customers. We are dedicated to offering an exceptional shopping experience, where craftsmanship,  affordability, and sustainability converge.
+                                        Mission Statement: At IKEA , our mission is to transform houses into homes by providing high-quality, stylish, and functional furniture that enriches the lives of our customers. We are dedicated to offering an exceptional shopping experience, where craftsmanship,  affordability, and sustainability converge.
                                 </p>
                         </div>
                         <div className={styles.names}>
