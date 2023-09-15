@@ -89,6 +89,7 @@ function SignUpForm({
 					/>
 					<button type="submit" disabled={disable}>
 						SIGN UP
+						
 					</button>
 				</form>
 			</div>
